@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<title>Banco de Horas</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>⏱️ Banco de Horas</h1>
+      <div id="usuarioAtual" class="usuario-atual"></div>
+    </header>
 
+    <section id="telaNome" class="cartao">
+      <label for="inputNome">Seu nome</label>
+      <input type="text" id="inputNome" placeholder="Ex: Marco Silva" />
+      <button id="btnSalvarNome">Continuar</button>
+    </section>
+
+    <main id="conteudo" class="oculto">
+      <section class="cartao">
+        <h2>Lançar dia</h2>
+        <form id="formRegistro">
+          <label for="data">Data</label>
+          <input type="date" id="data" required />
+
+          <label for="entrada">Chegada</label>
+          <input type="time" id="entrada" required />
+
+          <div class="linha-dupla">
+            <div>
+              <label for="almocoSaida">Saída almoço</label>
+              <input type="time" id="almocoSaida" />
+            </div>
+            <div>
+              <label for="almocoRetorno">Volta almoço</label>
+              <input type="time" id="almocoRetorno" />
+            </div>
+          </div>
+
+          <label for="saida">Saída</label>
+          <input type="time" id="saida" required />
+
+          <button type="submit">Salvar registro</button>
+          <p id="mensagemErro" class="erro"></p>
+        </form>
+      </section>
+
+      <section class="cartao saldo-cartao">
+        <h2>Saldo do banco de horas</h2>
+        <div id="saldoTotal" class="saldo-valor">--:--</div>
+        <p class="legenda">Positivo = horas a receber/folgar · Negativo = horas devendo</p>
+      </section>
+
+      <section class="cartao">
+        <div class="filtro-header">
+          <h2>Histórico</h2>
+          <input type="month" id="filtroMes" />
+        </div>
+        <div id="listaRegistros"></div>
+      </section>
+
+      <button id="btnTrocarUsuario" class="link-btn">Trocar de usuário</button>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
