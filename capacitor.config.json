@@ -1,0 +1,9 @@
+{
+  "appId": "com.seunome.bancodehoras",
+  "appName": "Banco de Horas",
+  "webDir": "public",
+  "server": {
+    "url": "https://bancodehoras-yv01.onrender.com",
+    "cleartext": false
+  }
+}
